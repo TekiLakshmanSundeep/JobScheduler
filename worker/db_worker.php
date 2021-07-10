@@ -16,14 +16,14 @@
 $comic_url = "";
 $json_data = "";
 $message = "";
-function getUrls($string)
+function getUrls()
 {
 $response = file_get_contents("https://c.xkcd.com/random/comic/");
 $regex = '/https?\:\/\/[^\" ]+/i';
 preg_match_all($regex, $response, $matches);
 return ($matches[0]);
 } 
-$urls = getUrls($string);
+$urls = getUrls();
 foreach($urls as $data) {
     $string_search = "https://xkcd.com/";
     if(strpos($data, $string_search)>=0) {
@@ -33,7 +33,7 @@ foreach($urls as $data) {
         send_inline_image($json_data);
         return false;
     }
-}
+} 
 /**
  * @param $image_url {url contains the image name in the path}
  * To ge the image name from the URL
