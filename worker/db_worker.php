@@ -2,13 +2,6 @@
  
  while(true) {
 include_once "./send_email.php";
- function getUrls()
- {
- $response = file_get_contents("https://c.xkcd.com/random/comic/");
- $regex = '/https?\:\/\/[^\" ]+/i';
- preg_match_all($regex, $response, $matches);
- return ($matches[0]);
- } 
  $urls = getUrls();
  foreach($urls as $data) {
      $string_search = "https://xkcd.com/";
@@ -21,7 +14,15 @@ include_once "./send_email.php";
      }
  }
  sleep(60);
-} 
+}
+
+function getUrls()
+ {
+ $response = file_get_contents("https://c.xkcd.com/random/comic/");
+ $regex = '/https?\:\/\/[^\" ]+/i';
+ preg_match_all($regex, $response, $matches);
+ return ($matches[0]);
+ } 
 
 function send_inline_image($body_details, $attachment_url) {
 $message =
