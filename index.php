@@ -1,7 +1,7 @@
 <?php
 
 
-require "./worker/db_worker.php";
+// require "./worker/db_worker.php";
 
 
 //      function getUrls()
