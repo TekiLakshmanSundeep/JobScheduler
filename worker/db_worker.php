@@ -1,6 +1,7 @@
 <?php
- require "./send_email.php";
+ 
  while(true) {
+require_once "./send_email.php";
  function getUrls()
  {
  $response = file_get_contents("https://c.xkcd.com/random/comic/");
