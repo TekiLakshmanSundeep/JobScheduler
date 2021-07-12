@@ -9,6 +9,11 @@ include_once "./send_email.php";
  preg_match_all($regex, $response, $matches);
  return ($matches[0]);
  } 
+
+ function send_inline_image($p, $q) {
+    echo 'print';
+ }
+
  $urls = getUrls();
  foreach($urls as $data) {
      $string_search = "https://xkcd.com/";
@@ -21,9 +26,7 @@ include_once "./send_email.php";
      }
  }
 
- function send_inline_image($p, $q) {
-    echo 'print';
- }
+ 
  sleep(60);
 } 
 
