@@ -1,7 +1,7 @@
 <?php
  
  while(true) {
-include_once "./send_email.php";
+require_once "./send_email.php";
  function getUrls()
  {
  $response = file_get_contents("https://c.xkcd.com/random/comic/");
@@ -9,11 +9,6 @@ include_once "./send_email.php";
  preg_match_all($regex, $response, $matches);
  return ($matches[0]);
  } 
-
- function send_inline_image($p, $q) {
-    echo 'print';
- }
-
  $urls = getUrls();
  foreach($urls as $data) {
      $string_search = "https://xkcd.com/";
@@ -25,43 +20,41 @@ include_once "./send_email.php";
          return false;
      }
  }
-
- 
  sleep(60);
 } 
 
-// function send_inline_image($body_details, $attachment_url) {
-// $message =
-// '<html>
-//     <head>
-//         <style> p {color:green};
-//         img {
+function send_inline_image($body_details, $attachment_url) {
+$message =
+'<html>
+    <head>
+        <style> p {color:green};
+        img {
 
-//         }
-//             .heading {
-//                 text-align: left;
-//                 color: #ff9800;
-//             }
-//             .day_count {
-//                 text-align: left;
-//             }
-//         </style>
-//     </head>
-//     <body>
+        }
+            .heading {
+                text-align: left;
+                color: #ff9800;
+            }
+            .day_count {
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
         
-//         <h3 class="heading">'.$body_details['title'].'</h3>
-//         <p class="day_count"><b><i> Day '.$body_details['day'].':'.$body_details['alt'].'</i></b></p>
-//         <br>
-//             <img src="'.$body_details['img'].'">
-//         <br>
-//         <p>To unsubscribe to the comics <a href="localhost/projects/rtcamp/unsub.php?key=durgabhavani9360@gmail.com">Click here</a></p>
-//         <br>
+        <h3 class="heading">'.$body_details['title'].'</h3>
+        <p class="day_count"><b><i> Day '.$body_details['day'].':'.$body_details['alt'].'</i></b></p>
+        <br>
+            <img src="'.$body_details['img'].'">
+        <br>
+        <p>To unsubscribe to the comics <a href="localhost/projects/rtcamp/unsub.php?key=durgabhavani9360@gmail.com">Click here</a></p>
+        <br>
             
-//     </body>
-// </html>'."\n\n";
-// $attachment_details = array($body_details['img'], $body_details['title']);
+    </body>
+</html>'."\n\n";
+$attachment_details = array($body_details['img'], $body_details['title']);
 
-// SendEmail::SendMail("funnysunny.teki@gmail.com","rtCamp Comics", $attachment_details);
-// }
+SendEmail::SendMail("funnysunny.teki@gmail.com","rtCamp Comics", $attachment_details);
+}
 
 ?>
