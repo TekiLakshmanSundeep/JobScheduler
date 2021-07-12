@@ -7,7 +7,7 @@
      class SendEmail{
      public static function SendMail($to,$subject,$content, $attachment_content){
         $key = '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';
-         $email =  new \vendor\SendGrid\lib\mail\Mail\Mail();
+         $email =  new \vendor\SendGrid\Mail\Mail();
          $email->setFrom("sundeepteki12@gmail.com","rtcamp");
          $email->setSubject($subject);
          $email->addTo($to);
