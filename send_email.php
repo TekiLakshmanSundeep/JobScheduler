@@ -9,7 +9,7 @@
          $email->setFrom("sundeepteki12@gmail.com","rtcamp");
          $email->setSubject($subject);
          $email->addTo($to);
-         $email->addContent("text/html",$content);
+         $email->addContent("text/plain",$content);
          $sendgrid = new \SendGrid($key);
          
         // Attachment code
