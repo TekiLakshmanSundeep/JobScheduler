@@ -1,7 +1,7 @@
 <?php
      require "./worker/db_worker.php";
      
-     require_once __DIR__ . 'vendor/autoload.php';
+     require_once __DIR__ . '/vendor/autoload.php';
      class SendEmail{
      public static function SendMail($to,$subject,$content, $attachment_content){
         $key = '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';
