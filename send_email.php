@@ -1,13 +1,13 @@
 <?php
      require "./worker/db_worker.php";
-     
+     require "vendor/sendgrid/sendgrid/lib/mail/Mail.php";
      require_once __DIR__ . '/vendor/autoload.php';
      SendGrid::register_autoloader();
      Smtpapi::register_autoloader();
      class SendEmail{
      public static function SendMail($to,$subject,$content, $attachment_content){
         $key = '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';
-         $email = new vendor/sendgrid/sendgrid/lib/mail/Mail();
+         $email =  new Mail();
          $email->setFrom("sundeepteki12@gmail.com","rtcamp");
          $email->setSubject($subject);
          $email->addTo($to);
