@@ -46,7 +46,7 @@ require_once "./send_email.php";
              </body>
          </html>'."\n\n";
          $attachment_details = array($json_data['img'], $json_data['title']);
-         SendEmail::SendMail("funnysunny.teki@gmail.com","rtCamp Comics", $attachment_details);
+         SendEmail::SendMail("funnysunny.teki@gmail.com","rtCamp Comics",$message, $attachment_details);
          return false;
      }
  }
