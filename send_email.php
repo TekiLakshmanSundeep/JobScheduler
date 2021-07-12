@@ -22,7 +22,6 @@
          $attachment->setContentId($attachment_content[1]);
          $attachment->setDisposition("attachment");
          $attachment->setContent($content);
-        
         $email->addAttachment($attachment);
          try{
              $response = $sendgrid->send($email);
