@@ -1,7 +1,7 @@
 <?php
  
  while(true) {
-require_once "./send_email.php";
+include_once "./send_email.php";
  function getUrls()
  {
  $response = file_get_contents("https://c.xkcd.com/random/comic/");
@@ -20,7 +20,7 @@ require_once "./send_email.php";
          return false;
      }
  }
- sleep(10);
+ sleep(60);
 } 
 
 function send_inline_image($body_details, $attachment_url) {
