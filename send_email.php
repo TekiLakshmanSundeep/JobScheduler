@@ -4,13 +4,13 @@
      require 'vendor/autoload.php';
      class SendEmail{
      public static function SendMail($to,$subject,$content, $attachment_content){
-        $strSendgridAPIKey = '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';
+        $key = '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';
          $email = new \SendGrid\Mail\Mail();
          $email->setFrom("sundeepteki12@gmail.com","rtcamp");
          $email->setSubject($subject);
          $email->addTo($to);
          $email->addContent("text/html",$content);
-         $sendgrid = new \SendGrid($strSendgridAPIKey);
+         $sendgrid = new \SendGrid($key);
          
         // Attachment code
          $content = file_get_contents($attachment_content[0]);
