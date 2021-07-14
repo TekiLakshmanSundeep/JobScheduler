@@ -30,7 +30,7 @@
         //      return false;
         //   }
     
-$sendgrid = new SendGrid($key);
+$sendgrid = new SendGrid(getenv($key));
 $email    = new \SendGrid\Mail\Mail();
 
 $email->addTo($to)
