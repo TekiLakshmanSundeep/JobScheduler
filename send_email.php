@@ -2,10 +2,13 @@
      require "./worker/db_worker.php";
 //     require_once ('/app/vendor/autoload.php');
     require 'vendor/autoload.php';
-     
+    
+
      class SendEmail{
+     use SendGrid\Mail\Mail;
      public static function SendMail($to,$subject,$content, $attachment_content){
         $key = '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';
+        
         //  $email =  new \SendGrid\Mail\Mail();
         //  $email->setFrom("sundeepteki12@gmail.com","rtcamp");
         //  $email->setSubject($subject);
@@ -31,7 +34,7 @@
         //   }
     
 $sendgrid = new SendGrid(getenv($key));
-$email    = new \SendGrid\Mail\Mail();
+$email    = new Mail();
 
 $email->addTo($to)
       ->setFrom("sundeepteki12@gmail.com")
