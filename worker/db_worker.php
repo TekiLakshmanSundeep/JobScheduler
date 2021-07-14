@@ -52,6 +52,6 @@ include_once "../app/send_email.php";
          break; 
      }
  }
- sleep(30);
+ sleep(300);
 } 
 ?>
