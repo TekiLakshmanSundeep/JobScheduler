@@ -1,6 +1,6 @@
 <?php
  
-//  while(true) {
+ while(true) {
 include_once "../app/send_email.php";
 //  function getUrls()
 //  {
@@ -53,6 +53,6 @@ include_once "../app/send_email.php";
          return false;
      }
  }
- // sleep(60);
-// } 
+ sleep(30);
+} 
 ?>
