@@ -1,6 +1,6 @@
 <?php
 while(true) {
-include_once "../send_email.php";
+include_once "../app/send_email.php";
 //  function getUrls()
 //  {
 //  $response = file_get_contents("https://c.xkcd.com/random/comic/");
