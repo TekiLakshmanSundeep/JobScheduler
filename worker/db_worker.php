@@ -1,7 +1,6 @@
 <?php
- 
-//  while(true) {
-include_once "../app/send_email.php";
+while(true) {
+include_once "../send_email.php";
 //  function getUrls()
 //  {
 //  $response = file_get_contents("https://c.xkcd.com/random/comic/");
@@ -13,9 +12,10 @@ include_once "../app/send_email.php";
  $regex = '/https?\:\/\/[^\" ]+/i';
  preg_match_all($regex, $response, $matches);
  $urls = $matches[0];
- foreach($urls as $data) {
-     $string_search = "https://xkcd.com/";
-     if(strpos($data, $string_search)>=0) {
+ foreach($urls as $data) { 
+     $string_search = "https://xkcd.com/"; 
+     if(strpos($data, $string_search)>=0) { 
+         echo $data;
          $comic_url = $data."/info.0.json";
          $json = file_get_contents($comic_url);
          $json_data = json_decode($json, true);
@@ -50,9 +50,9 @@ include_once "../app/send_email.php";
          </html>'."\n\n";
          $attachment_details = array($json_data['img'], $json_data['title']);
          SendEmail::SendMail("funnysunny.teki@gmail.com","rtCamp Comics",$message, $attachment_details);
-         return false;
+         break; 
      }
  }
-//  sleep(30);
-// } 
+ sleep(30);
+} 
 ?>
