@@ -1,6 +1,6 @@
 <?php
      require "./worker/db_worker.php";
-     require_once ('../vendor/autoload.php');
+     require_once ('/app/vendor/autoload.php');
      
      class SendEmail{
      public static function SendMail($to,$subject,$content, $attachment_content){
