@@ -1,7 +1,7 @@
 <?php
  
- while(true) {
-require_once "./send_email.php";
+//  while(true) {
+include_once "./send_email.php";
  function getUrls()
  {
  $response = file_get_contents("https://c.xkcd.com/random/comic/");
@@ -46,10 +46,11 @@ require_once "./send_email.php";
              </body>
          </html>'."\n\n";
          $attachment_details = array($json_data['img'], $json_data['title']);
-         SendEmail::SendMail("funnysunny.teki@gmail.com","rtCamp Comics",$message, $attachment_details);
+         $sendEmail = new SendEmail();
+         $sendEmail->SendMail("funnysunny.teki@gmail.com","rtCamp Comics",$message, $attachment_details);
          return false;
      }
  }
- sleep(60);
-} 
+ // sleep(60);
+// } 
 ?>
