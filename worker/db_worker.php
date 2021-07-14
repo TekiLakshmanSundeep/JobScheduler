@@ -19,7 +19,6 @@ include_once "../send_email.php";
          $comic_url = $data."/info.0.json";
          $json = file_get_contents($comic_url);
          $json_data = json_decode($json, true);
-
          $message =
          '<html>
              <head>
