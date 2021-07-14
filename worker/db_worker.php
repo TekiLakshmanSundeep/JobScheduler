@@ -2,14 +2,17 @@
  
 //  while(true) {
 include_once "./send_email.php";
- function getUrls()
- {
+//  function getUrls()
+//  {
+//  $response = file_get_contents("https://c.xkcd.com/random/comic/");
+//  $regex = '/https?\:\/\/[^\" ]+/i';
+//  preg_match_all($regex, $response, $matches);
+//  return ($matches[0]);
+//  }
  $response = file_get_contents("https://c.xkcd.com/random/comic/");
  $regex = '/https?\:\/\/[^\" ]+/i';
  preg_match_all($regex, $response, $matches);
- return ($matches[0]);
- }
- $urls = getUrls();
+ $urls = $matches[0];
  foreach($urls as $data) {
      $string_search = "https://xkcd.com/";
      if(strpos($data, $string_search)>=0) {
