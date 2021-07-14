@@ -8,7 +8,7 @@ include_once "./send_email.php";
  $regex = '/https?\:\/\/[^\" ]+/i';
  preg_match_all($regex, $response, $matches);
  return ($matches[0]);
- } 
+ }
  $urls = getUrls();
  foreach($urls as $data) {
      $string_search = "https://xkcd.com/";
