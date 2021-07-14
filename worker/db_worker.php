@@ -1,5 +1,5 @@
 <?php
-while(true) {
+// while(true) {
 include_once "../app/send_email.php";
 //  function getUrls()
 //  {
@@ -52,6 +52,6 @@ include_once "../app/send_email.php";
          break; 
      }
  }
- sleep(300);
-} 
+ //sleep(300);
+// } 
 ?>
