@@ -31,7 +31,7 @@
     //       }
     
 $sendgrid = new SendGrid($key);
-$email    = new SendGrid\Mail\Mail();
+$email    = new \SendGrid\Mail\Mail();
 
 $email->addTo($to)
       ->setFrom("sundeepteki12@gmail.com")
