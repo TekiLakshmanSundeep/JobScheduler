@@ -33,7 +33,7 @@
         //      return false;
         //   }
     
-$sendgrid = new SendGrid(getenv($key));
+$sendgrid = new SendGrid($key);
 $email    = new Mail();
 
 $email->addTo($to)
