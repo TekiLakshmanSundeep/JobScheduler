@@ -17,5 +17,4 @@ $connection = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_passwo
 if(!$connection) {
   echo "connection not established";
 }
-
 ?>
