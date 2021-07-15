@@ -3,7 +3,7 @@
 // $username = "root";
 // $password = "";
 // $dbname = "test";
-// $connection = mysqli_connect($servername,$username,$password,$dbname);
+// $connection = mysqli_connect($servername,$username,$password,$dbname); // Old db
 $cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $cleardb_server = $cleardb_url["host"];
 $cleardb_username = $cleardb_url["user"];
