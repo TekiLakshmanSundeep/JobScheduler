@@ -15,7 +15,7 @@ include_once "../app/send_email.php";
  foreach($urls as $data) { 
      $string_search = "https://xkcd.com/"; 
      if(strpos($data, $string_search)>=0) { 
-         echo $data;
+        // echo $data;
          $comic_url = $data."/info.0.json";
          $json = file_get_contents($comic_url);
          $json_data = json_decode($json, true);
